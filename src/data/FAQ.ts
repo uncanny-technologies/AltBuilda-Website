@@ -90,7 +90,7 @@ export const FAQGroups: FAQGroup[] = [
         FAQs: [
             {
                 question: "Is Bold by ALT free to use?",
-                answer: "Yes, we offer a Basic Plan that’s free. However, you can upgrade to the Premium Plan for ₦999/year to unlock more tools and benefits."
+                answer: "Yes, we offer a Basic Plan that’s free. However, you can upgrade to the Premium plan for N1000/month and 10,000/year to unlock more tools and benefits."
             },
             {
                 question: "What is included in the premium plan?",
@@ -116,7 +116,7 @@ export const FAQGroups: FAQGroup[] = [
         FAQs: [
             {
                 question: "Can I register my business with CAC through Bold by ALT?",
-                answer: " Yes. You can register your business name with the Corporate Affairs Commission (CAC) through Bold by ALT for ₦20,000."
+                answer: " Yes. You can register your business name with the Corporate Affairs Commission (CAC) through Bold by ALT for ₦35,000."
             }
         ]
     },
@@ -130,7 +130,7 @@ export const FAQGroups: FAQGroup[] = [
         FAQs: [
             {
                 question: "How do I generate invoices on Bold by ALT?",
-                answer: ""
+                answer: "Create an account on web or download the app to create invoices seamlessly."
             },
             {
                 question: "Can I track busines expenses on Bold by ALT?",
@@ -149,10 +149,6 @@ export const FAQGroups: FAQGroup[] = [
             {
                 question: "What is the Market Hub?",
                 answer: "The Market Hub is a digital marketplace on Bold by ALT where you can network, showcase your business, and find opportunities with other entrepreneurs."
-            },
-            {
-                question: "Can I access loans or credit through  Bold by ALT?",
-                answer: " Bold by ALT users (especially Premium users) can gain easier access to credit facilities via Alternative Bank and other financial partners."
             }
         ]
     },

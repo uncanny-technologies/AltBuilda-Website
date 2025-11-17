@@ -3,6 +3,13 @@ import rejectJson from "./rejectJson"
 
 const baseURL = import.meta.env.VITE_API_BASE_URL
 
+export interface ContactFormDataType {
+    firstName: string
+    lastName: string
+    email: string
+    message: string
+}
+
 export interface GetPrivacyPolicyResponse {
     "success": boolean
     "message": string
@@ -54,6 +61,21 @@ export interface GetSingleBlogPostResponse {
 
 export type GetTermsAndConditionsResponse = GetPrivacyPolicyResponse
 
+const submitContactForm = (data: ContactFormDataType) => {
+    return fetch(
+        `${baseURL}/api/v1/Content/contact-us`,
+        {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+    )
+    .then(res => !res.ok ? rejectJson(res): res.json())
+}
+
 const subscribeNewsletter = (email: string) => {
     return fetch(
         `${baseURL}/api/v1/Admin/content-mgmt/blogs-newsletter/subscribe`,
@@ -103,6 +125,7 @@ const getTermsAndConditions = () => {
 }
 
 export {
+    submitContactForm,
     subscribeNewsletter,
     unsubscribeNewsletter,
     getBlogPosts,
