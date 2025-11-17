@@ -43,7 +43,7 @@ const InfoSection: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row lg:gap-25 text-secondary">
-                    <SupportInfoTile title="Email Support" contact="contactus@boldbyalt.ng" hours="Instant support for queries"/>
+                    <SupportInfoTile title="Email Support" contact="contactus@boldbyalt.ng" hours="24/7"/>
 
                     {/* <SupportInfoTile title="Phone Support" contact="(808) 998-34256" hours="Monday - Friday 9 am to 6 pm" /> */}
                 </div>
