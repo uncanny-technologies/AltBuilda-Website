@@ -1,24 +1,38 @@
 import { useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { ContactFormDataType, submitContactForm } from "../../api/fns";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
-interface FormDataType {
-    firstName: string
-    lastName: string
-    email: string
-    message: string
-}
+type FormDataType = ContactFormDataType
 
 const FormSection: React.FC = () => {
     const [formData, setFormData] = useState<FormDataType>({ firstName: "", lastName: "", email: "", message: "" })
 
+    const { mutate, isPending } = useMutation({
+        mutationFn: () => submitContactForm(formData),
+        onSuccess: () => {
+            toast.success("Message sent")
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                message: ""
+            })
+        },
+        onError: err => {
+            toast.error(err.message || "Something went wrong. Please try again")
+        }
+    })
+
     const handleFormChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = e => {
-        setFormData(prev => ({...prev, [e.target.name]: e.target.value}))
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
     const handleFormSubmit: React.FormEventHandler = e => {
         e.preventDefault()
 
-        // hit submit api here
+        mutate()
     }
 
     return (
@@ -36,6 +50,7 @@ const FormSection: React.FC = () => {
                                 className="input w-full h-12 bg-neutral rounded-lg"
                                 placeholder="First name"
                                 maxLength={50}
+                                required
                             />
                         </div>
 
@@ -49,6 +64,7 @@ const FormSection: React.FC = () => {
                                 className="input w-full h-12 bg-neutral rounded-lg"
                                 placeholder="Last name"
                                 maxLength={50}
+                                required
                             />
                         </div>
                     </div>
@@ -63,6 +79,7 @@ const FormSection: React.FC = () => {
                             className="input w-full h-12 bg-neutral rounded-lg"
                             placeholder="you@company.com"
                             maxLength={50}
+                            required
                         />
                     </div>
 
@@ -75,13 +92,21 @@ const FormSection: React.FC = () => {
                             className="textarea w-full h-43 bg-neutral rounded-lg"
                             placeholder="Type in a message"
                             maxLength={300}
+                            required
                         />
                     </div>
 
                     <div className="flex flex-row justify-center">
-                        <button className={`btn btn-submit bg-primary text-secondary border border-primary w-38 sm:w-47 md:w-60 2xl:w-65 rounded-full text-[0.65rem] sm:text-sm md:text-xl font-medium py-6.5 px-2 shadow-none hover:scale-105 transition-all ease-in-out duration-500 hover:[&>*]:translate-x-2`}>
+                        <button
+                            className={`btn btn-submit bg-primary text-secondary border border-primary w-38 sm:w-47 md:w-60 2xl:w-65 rounded-full text-[0.65rem] sm:text-sm md:text-xl font-medium py-6.5 px-2 shadow-none hover:scale-105 transition-all ease-in-out duration-500 hover:[&>*]:translate-x-2`}
+                            disabled={isPending}>
                             Leave a message
-                            <IoIosArrowRoundForward className={`text-secondary size-8 transition-all ease-in-out duration-500`} />
+                            {
+                                isPending
+                                    ? <span className="loading loading-spinner text-primary"></span>
+                                    : <IoIosArrowRoundForward className={`text-secondary size-8 transition-all ease-in-out duration-500`} />
+                            }
+
                         </button>
                     </div>
                 </form>
