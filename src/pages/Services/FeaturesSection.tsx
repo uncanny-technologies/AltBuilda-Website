@@ -230,7 +230,7 @@ const FeatureTileList: React.FC<{ features: Omit<Feature, "image" | "mobileImage
         <div className="w-full flex flex-row gap-10 md:gap-6 flex-wrap">
             {
                 features.map(f => (
-                    <FeatureTile feature={f} />
+                    <FeatureTile key={f.title} feature={f} />
                 ))
             }
         </div>
