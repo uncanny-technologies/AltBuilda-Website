@@ -3,6 +3,8 @@ import signVector from "../assets/sign-vector.png"
 import footerLogo from "../assets/navbar-logo-dark.svg"
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaTiktok } from "react-icons/fa6";
+import { fbLink, igLink, linkedInLink, tiktokLink, twitterLink } from "../data/links";
 
 const Footer: React.FC = () => {
     const { pathname } = useLocation()
@@ -38,16 +40,22 @@ const Footer: React.FC = () => {
                                 </Link>
 
                                 <div className="flex flex-row gap-8.5 p-0 text-white b">
-                                    <Link to={"x.com/"}>
+                                    <Link to={twitterLink}>
                                         <FaTwitter className="size-4" />
                                     </Link>
 
-                                    <Link to={"facebook.com/"}>
+                                    <Link to={fbLink}>
                                         <FaFacebookF className="size-4" />
                                     </Link>
 
-                                    <Link to={"instagram.com/"}>
+                                    <Link to={igLink}>
                                         <FaInstagram className="size-4" />
+                                    </Link>
+                                    <Link to={linkedInLink}>
+                                        <FaLinkedin className="size-4" />
+                                    </Link>
+                                    <Link to={tiktokLink}>
+                                        <FaTiktok className="size-4" />
                                     </Link>
                                 </div>
                             </div>
@@ -77,16 +85,22 @@ const Footer: React.FC = () => {
                             </nav>
 
                             <div className="flex flex-row gap-8.5 p-0 text-white b">
-                                <Link to={"x.com/"}>
+                                <Link to={twitterLink}>
                                     <FaTwitter className="size-4" />
                                 </Link>
 
-                                <Link to={"facebook.com/"}>
+                                <Link to={fbLink}>
                                     <FaFacebookF className="size-4" />
                                 </Link>
 
-                                <Link to={"instagram.com/"}>
+                                <Link to={igLink}>
                                     <FaInstagram className="size-4" />
+                                </Link>
+                                <Link to={linkedInLink}>
+                                    <FaLinkedin className="size-4" />
+                                </Link>
+                                <Link to={tiktokLink}>
+                                    <FaTiktok className="size-4" />
                                 </Link>
                             </div>
                         </div>
