@@ -1,2 +1,7 @@
 export const appLoginPage = "https://alt-builda-frontend-user.vercel.app/login"
 export const appRegisterPage = "https://alt-builda-frontend-user.vercel.app/register"
+export const igLink = "https://www.instagram.com/boldbyalt?igsh=aXA1bGxjcHA0cGtk"
+export const tiktokLink = "https://www.tiktok.com/@boldbyalt?_r=1&_t=ZS-91fHjpeI0Jh"
+export const twitterLink = "https://x.com/boldbyalt?s=21"
+export const linkedInLink = "https://www.linkedin.com/company/boltbyalt/?viewAsMember=true"
+export const fbLink = "https://www.facebook.com/share/1DfBL9SVUE/?mibextid=wwXIfr"
