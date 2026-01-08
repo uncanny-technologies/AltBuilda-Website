@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import bannerGifBG from "../../assets/banner-gif-hd.gif"
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa"
+import { fbLink, igLink, linkedInLink, tiktokLink, twitterLink } from "../../data/links"
 
 const ContactBanner: React.FC = () => {
 
@@ -17,17 +18,25 @@ const ContactBanner: React.FC = () => {
                     </h3>
                 </div>
 
-                <div className="flex flex-row md:flex-col gap-6 self-center md:py-9">
-                    <Link to={""} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
+                <div className="grid md:grid-flow-col grid-cols-3 md:grid-rows-3 gap-6 self-center md:py-9">
+                    <Link to={fbLink} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
                         <FaFacebookF className="size-3.5" />
                     </Link>
 
-                    <Link to={""} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
+                    <Link to={igLink} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
                         <FaInstagram className="size-3.5" />
                     </Link>
 
-                    <Link to={""} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
+                    <Link to={twitterLink} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
                         <FaTwitter className="size-3.5" />
+                    </Link>
+
+                    <Link to={linkedInLink} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
+                        <FaLinkedin className="size-3.5" />
+                    </Link>
+
+                    <Link to={tiktokLink} className="size-12.5 text-white border border-white rounded-full flex justify-center items-center">
+                        <FaTiktok className="size-3.5" />
                     </Link>
                 </div>
             </section>
