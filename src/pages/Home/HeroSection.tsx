@@ -3,7 +3,8 @@ import ActionButton from "../../components/ActionButton"
 import useThemeContext from "../../hooks/useThemeContext"
 import heroSectionBG from "../../assets/hero-section-bg-min.png"
 import heroSectionBGDark from "../../assets/hero-section-bg-dark-min.png"
-import { appRegisterPage } from "../../data/links"
+
+const appRegisterPage = import.meta.env.VITE_APP_URL + "/register"
 
 const HeroSection: React.FC = () => {
     const { theme } = useThemeContext()
